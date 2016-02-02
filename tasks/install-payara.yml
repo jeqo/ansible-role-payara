@@ -7,7 +7,7 @@
   become: yes
 
 - debug:
-    msg: "{{ payara_url }} will be donwloaded in {{ paraya_home }}"
+    msg: "{{ payara_url }} will be donwloaded in {{ payara_home }}"
 
 - name: install payara
   unarchive:
