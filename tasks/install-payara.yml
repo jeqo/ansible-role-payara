@@ -6,6 +6,9 @@
     state: directory
   become: yes
 
+- debug:
+    msg: "{{ payara_url }} will be donwloaded in {{ paraya_home }}"
+
 - name: install payara
   unarchive:
     src: "{{ payara_url }}"
