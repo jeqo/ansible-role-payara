@@ -6,8 +6,9 @@
     state: directory
   become: yes
 
-- name: install the latest version of unzip
+- name: install unzip
   package: name=unzip state=latest
+  become: yes
 
 - debug:
     msg: "{{ payara_url }} will be donwloaded in {{ payara_home }}"
