@@ -4,6 +4,7 @@
   file:
     path: "{{ payara_home }}"
     state: directory
+    owner: "{{ ansible_user_id }}"
   become: yes
 
 - name: install unzip
@@ -17,4 +18,6 @@
   unarchive:
     src: "{{ payara_url }}"
     dest: "{{ payara_home }}"
+    owner: "{{ ansible_user_id }}"
     copy: no
+  become: yes
