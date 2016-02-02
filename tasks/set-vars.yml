@@ -40,8 +40,8 @@
     payara_url: "{{ payara_download_directory }}/{{ payara_web_ml }}.zip"
   when: payara_url is not defined and payara_distribution == "web" and payara_multilanguage
 
-- fail: msg=payara_url variable is not defined
+- fail: msg="payara_url variable is not defined"
   when: payara_url is not defined
 
-- fail: msg=payara_home variable is not defined
+- fail: msg="payara_home variable is not defined"
   when: payara_home is not defined
