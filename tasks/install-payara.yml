@@ -3,5 +3,5 @@
 - name: "install payara"
   unarchive:
     src: "{{ payara_url }}"
-    dest: "{{ paraya_home }}"
+    dest: "{{ payara_home }}"
     copy: no
