@@ -1,6 +1,12 @@
 ---
 #
-- name: "install payara"
+- name: prepare payara home
+  file:
+    path: "{{ payara_home }}"
+    state: directory
+  become: yes
+
+- name: install payara
   unarchive:
     src: "{{ payara_url }}"
     dest: "{{ payara_home }}"
