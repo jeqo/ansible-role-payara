@@ -1,2 +1,7 @@
 ---
 # defaults file for payara
+payara_release: 4.1.1.154
+payara_multilanguage: no # yes or no
+payara_distribution: full # minimal or micro or full or web
+
+payara_url:

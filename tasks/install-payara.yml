@@ -1,0 +1,7 @@
+---
+#
+- name: "install payara"
+  unarchive:
+    src: "{{ payara_url }}"
+    dest: "{{ paraya_home }}"
+    copy: no

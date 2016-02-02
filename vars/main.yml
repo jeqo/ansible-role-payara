@@ -1,2 +1,14 @@
 ---
 # vars file for payara
+payara_download_directory: "https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+{{ payara_release }}"
+
+payara_full: "payara-{{ payara_release }}"
+payara_micro: "payara-micro-{{ payara_release }}"
+payara_web: "payara-web-{{ payara_release }}"
+payara_minimal: "payara-minimal-{{ payara_release }}"
+payara_full_ml: "payara-ml-{{ payara_release }}"
+payara_micro_ml: "payara-micro-ml-{{ payara_release }}"
+payara_web_ml: "payara-web-ml-{{ payara_release }}"
+payara_minimal_ml: "payara-minimal-ml-{{ payara_release }}"
+
+payara_base: /opt/payara

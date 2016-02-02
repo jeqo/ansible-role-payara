@@ -1,0 +1,47 @@
+---
+#
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_full }}.zip"
+  when: payara_url is not defined and payara_distribution == "full" and not payara_multilanguage
+
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_micro }}.jar"
+  when: payara_url is not defined and payara_distribution == "micro" and not payara_multilanguage
+
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_minimal }}.zip"
+  when: payara_url is not defined and payara_distribution == "minimal" and not payara_multilanguage
+
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_web }}.zip"
+  when: payara_url is not defined and payara_distribution == "web" and not payara_multilanguage
+
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_full_ml }}.zip"
+  when: payara_url is not defined and payara_distribution == "full" and payara_multilanguage
+
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_micro_ml }}.jar"
+  when: payara_url is not defined and payara_distribution == "micro" and payara_multilanguage
+
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_minimal_ml }}.zip"
+  when: payara_url is not defined and payara_distribution == "minimal" and payara_multilanguage
+
+- set_fact:
+    payara_home: "{{ payara_base }}/{{ payara_full }}"
+    payara_url: "{{ payara_download_directory }}/{{ payara_web_ml }}.zip"
+  when: payara_url is not defined and payara_distribution == "web" and payara_multilanguage
+
+- fail: msg=payara_url variable is not defined
+  when: payara_url is not defined
+
+- fail: msg=payara_home variable is not defined
+  when: payara_home is not defined
