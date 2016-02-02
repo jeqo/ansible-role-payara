@@ -1,6 +1,8 @@
 ---
 # tasks file for payara
 - include: set-vars.yml
+  tags:
+    - install
 
 - include: install-payara.yml
   tags:
