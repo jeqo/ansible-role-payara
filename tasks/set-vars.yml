@@ -49,7 +49,7 @@
   when: payara_url != "" and payara_distribution == "web" and payara_multilanguage
 
 - fail: msg="payara_url variable is not defined"
-  when: payara_url is not defined and payara_url == ""
+  when: payara_url is not defined or payara_url == ""
 
 - fail: msg="payara_home variable is not defined"
-  when: payara_home is not defined and payara_home == ""
+  when: payara_home is not defined or payara_home == ""
