@@ -1,9 +1,10 @@
 ---
 # tasks file for payara
+- include: prepare.yml
+  become: yes
+
 - include: set-vars.yml
-  tags:
-    - install
 
 - include: install.yml
-  tags:
-    - install
+  become: yes
+  become_user: "{{ payara_user }}"

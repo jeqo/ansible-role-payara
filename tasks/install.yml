@@ -3,25 +3,10 @@
 - debug:
     msg: "{{ payara_url }} will be donwloaded in {{ payara_home }}"
 
-- name: prepare payara home
-  file:
-    path: "{{ payara_home }}"
-    state: directory
-    owner: "{{ ansible_user_id }}"
-  become: yes
-
-- name: install unarchive packages
-  package: name={{ item }} state=latest
-  become: yes
-  with_items:
-    - unzip
-    - tar
-
 - name: install payara
   unarchive:
     src: "{{ payara_url }}"
     dest: "{{ payara_base }}"
-    owner: "{{ ansible_user_id }}"
     copy: no
     creates: "{{ payara_home }}/bin/asadmin"
   become: yes

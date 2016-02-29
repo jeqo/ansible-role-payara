@@ -1,0 +1,18 @@
+---
+#
+- group:
+    name: "{{ payara_group }}"
+    state: present
+
+- user:
+    name: "{{ payara_user }}"
+    group: "{{ payara_group }}"
+    home: "{{ payara_base }}"
+    createhome: yes
+    state: present
+
+- name: install unarchive packages
+  package: name={{ item }} state=latest
+  with_items:
+    - unzip
+    - tar

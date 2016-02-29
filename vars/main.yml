@@ -11,4 +11,6 @@ payara_micro_ml: "payara-micro-ml-{{ payara_release }}"
 payara_web_ml: "payara-web-ml-{{ payara_release }}"
 payara_minimal_ml: "payara-minimal-ml-{{ payara_release }}"
 
+payara_user: payara
+payara_group: payara
 payara_base: /opt/payara
