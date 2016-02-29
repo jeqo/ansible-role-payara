@@ -4,6 +4,6 @@
   tags:
     - install
 
-- include: install-payara.yml
+- include: install.yml
   tags:
     - install
