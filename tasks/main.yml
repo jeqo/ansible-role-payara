@@ -7,4 +7,3 @@
 
 - include: install.yml
   become: yes
-  become_user: "{{ payara_user }}"

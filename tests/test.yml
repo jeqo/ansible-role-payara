@@ -14,14 +14,14 @@
       payara_multilanguage: yes
       payara_distribution: full
 
-- name: test install paraya full no-ml on ubuntu14 with openjdk jdk 8
+- name: test install paraya full no-ml on ubuntu14 with azul zulu 8
   hosts: test03
   roles:
     - role: payara
       payara_multilanguage: no
       payara_distribution: full
 
-- name: test install paraya full ml on ubuntu14 with openjdk jdk 8
+- name: test install paraya full ml on ubuntu14 with azul zulu 8
   hosts: test04
   roles:
     - role: payara

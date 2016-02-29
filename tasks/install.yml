@@ -9,7 +9,8 @@
     dest: "{{ payara_base }}"
     copy: no
     creates: "{{ payara_home }}/bin/asadmin"
-  become: yes
+    owner: "{{ payara_user }}"
+    group: "{{ payara_group }}"
   when: payara_distribution != 'micro'
 
 #- name: install payara micro
