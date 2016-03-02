@@ -8,7 +8,7 @@
     src: pwdfile.j2
     dest: "{{ payara_home}}/bin/pwdfile"
 
-- shell: "./asadmin start-domain payaradomain && ./asadmin --user admin --passwordfile pwdfile enable-secure-admin && ./asadmin stop-domain payaradomain"
+- shell: "./asadmin start-domain payaradomain && ./asadmin --host {{ payara_host }} --port {{ payara_admin_port }} --user admin --passwordfile pwdfile enable-secure-admin && ./asadmin stop-domain payaradomain"
   args:
     chdir: "{{ payara_home }}/bin"
   register: command_result
