@@ -12,11 +12,7 @@
   args:
     chdir: "{{ payara_home }}/bin"
 
-- shell: "./asadmin --user admin --passwordfile {{ payara_home}}/bin/pwdfile change-admin-password --domain_name payaradomain"
-  args:
-    chdir: "{{ payara_home }}/bin"
-
-- shell: "./asadmin --host 0.0.0.0 --port 4848 enable-secure-admin --domain_name payaradomain"
+- shell: "./asadmin --user admin --passwordfile pwdfile enable-secure-admin"
   args:
     chdir: "{{ payara_home }}/bin"
 
