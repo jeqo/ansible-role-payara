@@ -3,7 +3,7 @@
 - include: prepare.yml
   become: yes
 
-- include: set-vars.yml
+- include_vars: payara-{{ payara_distribution }}-{{ payara_multilanguage }}-ml.yml
 
 - include: install.yml
   become: yes
