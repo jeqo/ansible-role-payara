@@ -12,7 +12,7 @@
   args:
     chdir: "{{ payara_home }}/bin"
 
-- command: "./asadmin --user admin --passwordfile pwdfile change-admin-password"
+- command: "./asadmin --user admin --passwordfile {{ payara_home}}/bin/pwdfile change-admin-password"
   args:
     chdir: "{{ payara_home }}/bin"
 
