@@ -6,6 +6,16 @@
     - role: payara
       payara_multilanguage: no
       payara_distribution: full
+      payara_datasources:
+        -
+          name: datasouces/sigo
+          classname: org.mariadb.jdbc.Driver
+          db:
+             user: sigo
+             password: welcome1
+             name: sigo
+             host: 10.0.1.160
+             port: 3306
 
 - name: test install paraya full ml on centos 7 with openjdk jdk 8
   hosts: test02
