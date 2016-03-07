@@ -17,6 +17,8 @@
 - shell: >
     ./asadmin start-domain payaradomain &&
     ./asadmin create-jdbc-resource
+    --user {{ payara_admin_user }}
+    --passwordfile pwdfile
     --connectionpoolid {{ item.connection_pool_id }}
     {{ item.name }} &&
     ./asadmin stop-domain payaradomain
