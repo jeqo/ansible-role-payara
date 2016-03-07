@@ -11,4 +11,16 @@
     ./asadmin stop-domain payaradomain
   args:
     chdir: "{{ payara_home }}/bin"
-  with_items: "{{ payara_datasources }}"
+  with_items: "{{ payara_connection_pools }}"
+  when: payara_connection_pools is defined
+
+- shell: >
+    ./asadmin start-domain payaradomain &&
+    ./asadmin create-jdbc-resource
+    --connectionpoolid {{ item.connection_pool_id }}
+    {{ item.name }} &&
+    ./asadmin stop-domain payaradomain
+  args:
+    chdir: "{{ payara_home }}/bin"
+  with_items: "{{ payara_jdbc_resources }}"
+  when: payara_jdbc_resources is defined
