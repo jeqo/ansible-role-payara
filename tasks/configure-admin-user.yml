@@ -1,0 +1,26 @@
+---
+#
+- template:
+    src: admin-keyfile.j2
+    dest: "{{ payara_home }}/glassfish/domains/payaradomain/config/admin-keyfile"
+
+- template:
+    src: pwdfile.j2
+    dest: "{{ payara_home}}/bin/pwdfile"
+
+- shell: >
+    ./asadmin start-domain payaradomain &&
+    ./asadmin
+    --host {{ payara_host }}
+    --port {{ payara_admin_port }}
+    --user {{ payara_admin_user }}
+    --passwordfile pwdfile
+    enable-secure-admin &&
+    ./asadmin stop-domain payaradomain
+  args:
+    chdir: "{{ payara_home }}/bin"
+  register: command_result
+  ignore_errors: yes
+
+- debug:
+    var: command_result

@@ -10,3 +10,13 @@ payara_admin_password: glassfish
 payara_url:
 payara_host: 0.0.0.0
 payara_admin_port: 4848
+payara_datasource: []
+  # -
+  #   name: abc
+  #   classname: abc
+  #   db:
+  #      user:
+  #      password:
+  #      name:
+  #      host:
+  #      port:
