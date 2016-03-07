@@ -1,9 +1,10 @@
 
 - shell: >
     ./asadmin start-domain payaradomain &&
-    ./asadmin create-jdbc-connection-pool
+    ./asadmin
     --user {{ payara_admin_user }}
     --passwordfile pwdfile
+    create-jdbc-connection-pool
     --datasourceclassname {{ item.classname }}
     --restype javax.sql.DataSource
     --property user={{ item.db.user }}:password={{ item.db.password }}:DatabaseName={{ item.db.name }}:ServerName={{ item.db.host }}:port={{ item.db.port }}
@@ -16,9 +17,10 @@
 
 - shell: >
     ./asadmin start-domain payaradomain &&
-    ./asadmin create-jdbc-resource
+    ./asadmin
     --user {{ payara_admin_user }}
     --passwordfile pwdfile
+    create-jdbc-resource
     --connectionpoolid {{ item.connection_pool_id }}
     {{ item.name }} &&
     ./asadmin stop-domain payaradomain
