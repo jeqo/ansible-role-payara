@@ -21,3 +21,4 @@ payara_jdbc_resources: []
   #      name:
   #      host:
   #      port:
+payara_managed_executor_services: []

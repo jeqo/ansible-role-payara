@@ -1,0 +1,19 @@
+---
+#
+- shell: >
+    ./asadmin start-domain payaradomain &&
+    ./asadmin
+    --user {{ payara_admin_user }}
+    --passwordfile pwdfile
+    create-managed-executor-service
+    {{ item }} &&
+    ./asadmin stop-domain payaradomain
+  args:
+    chdir: "{{ payara_home }}/bin"
+  with_items: "{{ payara_managed_executor_services }}"
+  when: payara_managed_executor_services is defined
+  register: create_managed_executor_services
+  ignore_errors: yes
+
+- debug:
+    var: create_managed_executor_services

@@ -3,3 +3,5 @@
 - include: configure-admin-user.yml
 
 - include: configure-datasources.yml
+
+- include: configure-executor-services.yml
